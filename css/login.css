@@ -48,9 +48,11 @@
   border-color: #efd8f7;
 }
 
-.form button {
-  background-color: #c995f7;
-  cursor: pointer;
-  padding: 20px 0px;
-  border-radius: 15px;
+.addbtn {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.calcbtn {
+  /* 버튼 디자인 어떻게 하지 */
 }

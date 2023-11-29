@@ -20,3 +20,16 @@ function calculate() {
 
   console.log(p);
 }
+
+let number = 2;
+const add_textbox = () => {
+  const form = document.getElementsByClassName("form")[0];
+  const newInput = document.createElement("input");
+  newInput.id = number;
+  newInput.placeholder = "과목" + number;
+  form.appendChild(newInput);
+  number += 1;
+};
+const remove = (obj) => {
+  document.getElementById("box").removeChild(obj.parentNode);
+};
