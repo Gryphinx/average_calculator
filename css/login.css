@@ -48,11 +48,15 @@
   border-color: #efd8f7;
 }
 
-.addbtn {
+.btn__add {
   border: none;
   background-color: rgba(0, 0, 0, 0);
 }
 
-.calcbtn {
+.btn {
+  text-align: center;
+}
+
+.btn__calc {
   /* 버튼 디자인 어떻게 하지 */
 }
