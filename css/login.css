@@ -48,15 +48,22 @@
   border-color: #efd8f7;
 }
 
-.btn__add {
+.btn {
+  display: flex;
+  
+}
+
+.btn__add, .btn__remove {
   border: none;
   background-color: rgba(0, 0, 0, 0);
 }
 
-.btn {
-  text-align: center;
+.btn__calc {
+  margin-top: 10px;
+  /* 버튼 디자인 어떻게 하지 */
 }
 
-.btn__calc {
-  /* 버튼 디자인 어떻게 하지 */
+p {
+  text-align: center;
+  font-size: 30px;
 }

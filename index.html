@@ -9,18 +9,23 @@
   <body>
     <header class="welcome-header">
       <h1 class="welcome-header__title">평균 계산기 - 개선판</h1>
-      <p class="welcome-header__text">결과 :</p>
     </header>
 
     <form class="form">
-      <input id="1" type="number" placeholder="과목1" />
+      <input id="1" placeholder="과목1" />
     </form>
     <div class="btn">
       <button class="btn__add" onclick="add_textbox()">
         <i class="fa-solid fa-circle-plus fa-3x"></i>
       </button>
+      <button class="btn__remove" onclick="remove_textbox()">
+        <i class="fa-solid fa-circle-minus fa-3x"></i>
+      </button>
       <button class="btn__calc" onclick="calculate()">계산하기</button>
     </div>
+    <p>
+      당신의 이번 시험 평균은.. <span class="result">&nbsp;</span>점 입니다!!
+    </p>
     <script
       src="https://kit.fontawesome.com/e49494c693.js"
       crossorigin="anonymous"

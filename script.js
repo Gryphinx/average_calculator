@@ -1,27 +1,27 @@
 function calculate() {
-  const arr = [];
-  const a = document.getElementById("1").value;
-  const b = document.getElementById("2").value;
-  const c = document.getElementById("3").value;
-  const d = document.getElementById("4").value;
-  const e = document.getElementById("5").value;
-  const f = document.getElementById("6").value;
-  const g = document.getElementById("7").value;
-  arr.push(a, b, c, d, e, f, g);
-  const modifiedArr = arr.filter((v) => v.length > 0).map(Number);
+  const num = document.getElementsByClassName("form")[0].childElementCount;
+  n = 0;
+  let arr = [];
+  while (n < num) {
+    let a = document.getElementsByClassName("form")[0].children[n].value;
+    arr.push(a);
+    n += 1;
+  }
 
   let sum = 0;
-  modifiedArr.forEach(function (item) {
+  let newArr = arr.map(Number);
+
+  newArr.forEach(function (item) {
     sum += item;
   });
 
-  result = sum / modifiedArr.length;
-  p = document.querySelector("p");
-
-  console.log(p);
+  result = sum / newArr.length;
+  let x = document.getElementsByClassName("result")[0];
+  x.innerText = result;
 }
 
 let number = 2;
+
 const add_textbox = () => {
   const form = document.getElementsByClassName("form")[0];
   const newInput = document.createElement("input");
@@ -30,6 +30,11 @@ const add_textbox = () => {
   form.appendChild(newInput);
   number += 1;
 };
-const remove = (obj) => {
-  document.getElementById("box").removeChild(obj.parentNode);
+
+const remove_textbox = () => {
+  if (number > 2) {
+    const form = document.getElementsByClassName("form")[0].lastChild;
+    form.remove();
+    number -= 1;
+  }
 };
