@@ -67,6 +67,7 @@ form input:focus {
 }
 
 p {
+  margin-top: 40px;
   color: white;
   text-align: center;
   font-size: 30px;
