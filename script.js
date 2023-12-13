@@ -1,9 +1,23 @@
 function calculate() {
-  const num = document.getElementsByClassName("form")[0].childElementCount;
+  // Animation Part
+  const body = document.querySelector("body");
+  const form = document.querySelector("form");
+  const btn__calc = document.querySelector(".btn__calc");
+  const p = document.querySelector("p");
+  const progressBar = document.querySelector("progress-bar");
+  const svg = document.querySelector("svg");
+  const path = document.querySelector("path");
+  body.style.backgroundColor = "#121212";
+  form.style.display = "none";
+  btn__calc.style.opacity = 0;
+  p.style.opacity = 1;
+
+  // Calculation part
+  const num = document.querySelector("form").childElementCount;
   n = 0;
   let arr = [];
   while (n < num) {
-    let a = document.getElementsByClassName("form")[0].children[n].value;
+    let a = document.querySelector("form").children[n].value;
     arr.push(a);
     n += 1;
   }
@@ -18,31 +32,31 @@ function calculate() {
   result = sum / newArr.length;
   let x = document.getElementsByClassName("result")[0];
   x.innerText = result;
+  return n;
 }
 
-let number = 2;
+let form__input__id = 2;
 
 const add_textbox = () => {
-  const form = document.getElementsByClassName("form")[0];
+  const form = document.querySelector("form");
   const newInput = document.createElement("input");
-  newInput.id = number;
-  newInput.placeholder = "과목" + number + " 점수";
+  newInput.id = form__input__id;
+  newInput.placeholder = "과목" + form__input__id + " 점수";
   form.appendChild(newInput);
-  number += 1;
+  form__input__id += 1;
 };
 
 const remove_textbox = () => {
-  if (number > 2) {
-    const form = document.getElementsByClassName("form")[0].lastChild;
+  if (form__input__id > 2) {
+    const form = document.querySelector("form").lastChild;
     form.remove();
-    number -= 1;
+    form__input__id -= 1;
   }
 };
 
-
-//Animation Part
+//Animation Part (from codepen)
 var basicTimeline = anime.timeline({
-  autoplay: false
+  autoplay: false,
 });
 
 var pathEls = $(".check");
@@ -54,29 +68,24 @@ for (var i = 0; i < pathEls.length; i++) {
 
 basicTimeline
   .add({
-    targets: ".text",
-    duration: 1,
-    opacity: "0"
-  })
-  .add({
     targets: ".button",
     duration: 1300,
     height: 10,
     width: 300,
     backgroundColor: "#2B2D2F",
     border: "0",
-    borderRadius: 100
+    borderRadius: 100,
   })
   .add({
     targets: ".progress-bar",
     duration: 2000,
     width: 300,
-    easing: "linear"
+    easing: "linear",
   })
   .add({
     targets: ".button",
     width: 0,
-    duration: 1
+    duration: 1,
   })
   .add({
     targets: ".progress-bar",
@@ -85,19 +94,15 @@ basicTimeline
     delay: 500,
     duration: 750,
     borderRadius: 80,
-    backgroundColor: "#71DFBE"
+    backgroundColor: "#71DFBE",
   })
   .add({
     targets: pathEl,
     strokeDashoffset: [offset, 0],
     duration: 200,
-    easing: "easeInOutSine"
+    easing: "easeInOutSine",
   });
 
-$(".button").click(function() {
-  basicTimeline.play();
-});
-
-$(".text").click(function() {
+$(".button").click(function () {
   basicTimeline.play();
 });

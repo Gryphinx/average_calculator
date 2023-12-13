@@ -11,7 +11,7 @@
       <h1 class="welcome-header__title">평균 계산기 - 개선판</h1>
     </header>
 
-    <form class="form">
+    <form>
       <input id="1" placeholder="과목1 점수" />
     </form>
     <div class="btn">
@@ -22,25 +22,30 @@
         <i class="fa-solid fa-circle-minus fa-3x"></i>
       </button>
     </div>
-    <div class="button">
-      <div class="text" onclick="calculate()">계산하기</div>
+    <div class="container">
+      <div class="button" onclick="calculate()">
+        <button class="btn__calc" onclick="calculate()">계산하기</button>
+        <div class="progress-bar"></div>
+        <svg
+          x="0px"
+          y="0px"
+          viewBox="0 0 25 30"
+          style="enable-background: new 0 0 25 30"
+        >
+          <path
+            class="check"
+            class="st0"
+            d="M2,19.2C5.9,23.6,9.4,28,9.4,28L23,2"
+          />
+        </svg>
+      </div>
     </div>
-    <div class="progress-bar"></div>
-    <svg
-      x="0px"
-      y="0px"
-      viewBox="0 0 25 30"
-      style="enable-background: new 0 0 25 30"
-    >
-      <path class="check" class="st0" d="M2,19.2C5.9,23.6,9.4,28,9.4,28L23,2" />
-    </svg>
     <p>
       당신의 이번 시험 평균은.. <span class="result">&nbsp;&nbsp;</span>점
       입니다!!
     </p>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.js"></script>
-    <script src="./script.js"></script>
     <script
       src="https://kit.fontawesome.com/e49494c693.js"
       crossorigin="anonymous"
