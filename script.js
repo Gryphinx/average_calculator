@@ -4,13 +4,19 @@ function calculate() {
   const form = document.querySelector("form");
   const btn__calc = document.querySelector(".btn__calc");
   const p = document.querySelector("p");
-  const progressBar = document.querySelector("progress-bar");
+  const progressBar = document.querySelector(".progress-bar");
   const svg = document.querySelector("svg");
   const path = document.querySelector("path");
+  const img = document.querySelector("img");
   body.style.backgroundColor = "#121212";
   form.style.display = "none";
   btn__calc.style.opacity = 0;
   p.style.opacity = 1;
+  progressBar.style.opacity = 0;
+  svg.style.opacity = 0;
+  img.style.width = "82px";
+  img.style.height = "82px";
+  img.style.transform = "translateY(-350px)"
 
   // Calculation part
   const num = document.querySelector("form").childElementCount;
@@ -94,7 +100,7 @@ basicTimeline
     delay: 500,
     duration: 750,
     borderRadius: 80,
-    backgroundColor: "#71DFBE",
+    backgroundColor: "#71DFBE", // 71DFBE
   })
   .add({
     targets: pathEl,

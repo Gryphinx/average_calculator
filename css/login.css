@@ -67,12 +67,11 @@ form input:focus {
 }
 
 p {
-  margin-top: 40px;
   color: white;
   text-align: center;
   font-size: 30px;
   opacity: 0;
-  transition: 1s 5s opacity linear;
+  transition: opacity 1s ease 5s;
 }
 
 /* Animation Part */
@@ -111,6 +110,7 @@ p {
   border-radius: 200px;
   transform: translateY(-50%) translateX(-50%);
   background: #83888e;
+  transition: opacity 0.1s 5s;
 }
 
 svg {
@@ -120,8 +120,19 @@ svg {
   right: 0;
   width: 30px;
   transform: translateY(-50%) translateX(-50%);
-  opacity: 1;
-  transition: 1s 5s opacity ease;
+  transition: opacity 0.1s 5s;
+}
+
+img {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  left: -41px;
+  top: -36px;
+  transition-property: width, height, transform;
+  transition-duration: 0s, 0s, 0.3s;
+  transition-delay: 5s;
+  transition-timing-function: ease-in-out;
 }
 
 .check {
