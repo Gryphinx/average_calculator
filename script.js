@@ -2,16 +2,23 @@ function calculate() {
   // Animation Part
   const body = document.querySelector("body");
   const form = document.querySelector("form");
-  const btn__calc = document.querySelector(".btn__calc");
+  const btnCalc = document.querySelector(".btn__calc");
   const p = document.querySelector("p");
+  const btnRefresh = document.querySelector(".btn__refresh");
   const progressBar = document.querySelector(".progress-bar");
   const svg = document.querySelector("svg");
-  const path = document.querySelector("path");
   const img = document.querySelector("img");
   body.style.backgroundColor = "#121212";
   form.style.display = "none";
-  btn__calc.style.opacity = 0;
+  btnCalc.style.opacity = 0;
+  p.style.visibility = "visible";
   p.style.opacity = 1;
+  btnRefresh.style.visibility = "visible";
+  btnRefresh.style.opacity = 1;
+  btnRefresh.style.cursor = "pointer";
+  btnRefresh.addEventListener("click", () => {
+    window.location.reload();
+  });
   progressBar.style.opacity = 0;
   svg.style.opacity = 0;
   img.style.width = "82px";
@@ -46,7 +53,6 @@ let form__input__id = 1;
 const add_textbox = () => {
   const form = document.querySelector("form");
   const newInput = document.createElement("input");
-  const button = document.querySelector("button");
   form__input__id += 1;
   newInput.id = form__input__id;
   newInput.placeholder = "과목" + form__input__id + " 점수";
@@ -62,7 +68,7 @@ const remove_textbox = () => {
   }
 };
 
-//Animation Part (from codepen)
+//Animation Part (from https://codepen.io/andrewmillen/pen/MoKLob)
 var basicTimeline = anime.timeline({
   autoplay: false,
 });

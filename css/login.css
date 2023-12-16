@@ -72,11 +72,33 @@ form input:focus {
 }
 
 p {
+  font-weight: 600;
   color: white;
   text-align: center;
   font-size: 30px;
+  visibility: hidden;
   opacity: 0;
   transition: opacity 1s ease 5s;
+}
+
+.btn__refresh {
+  display: block;
+  margin: auto;
+  margin-top: 40px;
+  padding-block: 30px;
+  padding-inline: 37px;
+  border-radius: 5px;
+  font: bold 1.25rem/1 poppins;
+  color: #71dfbe;
+  background-color: #383b3d;
+  border: none;
+  visibility: hidden;
+  cursor: default;
+  opacity: 0;
+  transition-property: opacity, cursor;
+  transition-duration: 1s, 0.1s;
+  transition-delay: 5s;
+  transition-timing-function: ease;
 }
 
 /* Animation Part */
