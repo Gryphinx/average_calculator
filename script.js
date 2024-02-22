@@ -48,23 +48,25 @@ function calculate() {
   return n;
 }
 
-let form__input__id = 1;
+let form__input__id = 0;
 
 const add_textbox = () => {
   const form = document.querySelector("form");
   const newInput = document.createElement("input");
   form__input__id += 1;
   newInput.id = form__input__id;
-  newInput.placeholder = "과목" + form__input__id + " 점수";
+  newInput.placeholder = "추가 과목" + form__input__id + " 점수";
   form.appendChild(newInput);
   location.href = `#${form__input__id}`;
 };
 
 const remove_textbox = () => {
-  if (form__input__id > 2) {
+  if (form__input__id >= 2) {
     const form = document.querySelector("form").lastChild;
     form.remove();
     form__input__id -= 1;
+  } else {
+    alert("더 이상 삭제할 수 없습니다");
   }
 };
 
